@@ -1,0 +1,73 @@
+// ::selection {
+//   background-color: $selection-background-color;
+//   color: $selection-color;
+// }
+
+body {
+  text-size-adjust: 100%;
+  -webkit-font-smoothing: $font-smoothing;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: $text-rendering;
+  font-family: $base-font-family;
+  color: $base-font-color;
+  background-color: $base-background-color;
+  line-height: 1;
+
+  @include media-screen-pc {
+    font-size: $base-font-size-pc;
+  }
+
+  @include media-screen-sp {
+    font-size: $base-font-size-sp;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  color: $main-color;
+}
+
+figure {
+  margin: 0;
+}
+
+button {
+  background-color: transparent;
+  padding: 0;
+  border: none;
+  outline: none;
+}
+
+small {
+  font-size: 100%;
+}
+
+.is-desktop button:hover {
+  cursor: pointer;
+}
+
+::-webkit-input-placeholder {
+  color: $base-placeholder-color;
+}

@@ -1,0 +1,70 @@
+@mixin fit-fixed() {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+@mixin center-fixed() {
+  @include fit-fixed;
+  display: flex;
+  overflow-y: auto;
+
+  >* {
+    width: 100%;
+    margin: auto;
+  }
+}
+
+@mixin full-fixed() {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  :root.is-pc & {
+    height: 100%;
+  }
+
+  :root:not(.is-pc) & {
+    height: 100vh;
+  }
+}
+
+@mixin fit-coord($col, $col-msie, $width, $gap-column: 0, $gap-row: 0) {
+  display: grid;
+  grid-template-columns: repeat($col, $width);
+  gap: $gap-row $gap-column;
+
+  :root.is-msie & {
+    display: flex;
+    flex-wrap: wrap;
+
+    &>* {
+      width: calc((100% - 1px - #{$gap-column * ($col-msie - 1)}) / #{$col-msie});
+      margin-left: $gap-column;
+
+      &:nth-child(#{$col-msie}n #{"-"} #{$col-msie - 1}) {
+        margin-left: 0;
+      }
+
+      &:nth-child(#{$col-msie})~* {
+        margin-top: $gap-row;
+      }
+    }
+  }
+}
+
+@mixin fixed-coord($width, $gap-column: 0, $gap-row: 0) {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -#{$gap-column};
+  margin-bottom: -#{$gap-row};
+
+  &>* {
+    width: $width;
+    margin-right: $gap-column;
+    margin-bottom: $gap-row;
+  }
+}

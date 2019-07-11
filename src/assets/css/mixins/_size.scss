@@ -1,0 +1,25 @@
+@mixin ratio-size($org-width, $org-height, $size, $is-width: true) {
+  @if ($is-width) {
+    $ratio: get-ratio-size($org-width, $org-height);
+    width: $size + px;
+    height: ($size * $ratio) + px;
+  }
+
+  @else {
+    $ratio: get-ratio-size($org-height, $org-width);
+    width: ($size * $ratio) + px;
+    height: $size + px;
+  }
+}
+
+@mixin aspect-ratio($width, $height) {
+  content: "";
+  display: block;
+  padding-top: get-percent-size($width, $height);
+}
+
+@mixin svg-size($map, $size, $is-width: true) {
+  $width: map-get($map, width);
+  $height: map-get($map, height);
+  @include ratio-size($width, $height, $size, $is-width);
+}

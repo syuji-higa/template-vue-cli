@@ -1,0 +1,15 @@
+@function get-ratio-size($base-size, $size) {
+  @return $size / $base-size;
+}
+
+@function get-percent-size($base-size, $size) {
+  @return get-ratio-size($base-size, $size) * 100%;
+}
+
+@function grid-pc($num, $parent-num: $grid-split-pc) {
+  @return (100% / $parent-num) * $num;
+}
+
+@function grid-sp($num, $parent-num: $grid-split-sp) {
+  @return (100% / $parent-num) * $num;
+}

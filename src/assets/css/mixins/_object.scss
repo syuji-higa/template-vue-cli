@@ -1,0 +1,12 @@
+@mixin placeholder($width, $height, $bg-color:null) {
+  &::after {
+    content: "";
+    display: block;
+    width: 100%;
+    padding-top: get-percent-size($width, $height);
+
+    @if ($bg-color) {
+      background-color: $bg-color;
+    }
+  }
+}

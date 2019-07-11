@@ -1,0 +1,65 @@
+//antialiased,subpixel-antialiased,none
+$font-smoothing: antialiased;
+
+//auto,optimizeSpeed,optimizeLegibility,geometricPrecision
+$text-rendering: auto;
+
+$main-color: #00c;
+$base-color: #fff;
+$accent-color: #c00;
+
+$gothic-font-family: "ヒラギノ角ゴ ProN W3",
+"Hiragino Kaku Gothic ProN W3",
+HiraKakuProN-W3,
+"ヒラギノ角ゴ ProN",
+"Hiragino Kaku Gothic ProN",
+"ヒラギノ角ゴ Pro",
+"Hiragino Kaku Gothic Pro",
+"游ゴシック",
+"Yu Gothic,",
+YuGothic,
+Osaka,
+"メイリオ",
+Meiryo,
+"ＭＳ Ｐゴシック",
+"MS PGothic",
+sans-serif;
+$mincho-font-family: "ヒラギノ明朝 ProN W3",
+"Hiragino Mincho ProN W3",
+HiraMinProN-W3,
+"ヒラギノ明朝 ProN",
+"Hiragino Mincho ProN",
+"ヒラギノ明朝 Pro",
+"Hiragino Mincho Pro",
+"游明朝",
+"Yu Mincho",
+YuMincho,
+"HGS明朝E",
+"ＭＳ Ｐ明朝",
+"MS PMincho",
+serif;
+$base-font-family: $gothic-font-family;
+$base-font-size-pc: 16px;
+$base-font-size-sp: 14px;
+$base-font-color: #000;
+
+$base-placeholder-color: #989aaf;
+
+$base-background-color: $base-color;
+
+// $selection-background-color: $accent-color;
+// $selection-color: $base-color;
+
+$grid-split-pc: 24;
+$side-grid-pc: 3;
+$side-space-sp: 15px;
+
+$break-point-sp: 375px;
+$break-point-tb: 768px;
+$break-point-pc: 1024px;
+
+$img-path: "../images/";
+
+$svg-sprite: svg-sprite-data();
+
+@debug $svg-sprite;
